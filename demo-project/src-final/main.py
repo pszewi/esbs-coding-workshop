@@ -1,4 +1,4 @@
-# import scrape_clean as sc
+import scrape_clean as sc
 import analysis 
 import logging
 import subprocess
@@ -14,7 +14,7 @@ logging.basicConfig(
 
 if __name__=="__main__":
 
-    # sc.scrape_clean()
+    sc.scrape_clean()
     analysis.run()
 
     # final step in reproducibility: report your environment setup when finishing the project!
