@@ -6,18 +6,7 @@ import curl_cffi
 import json 
 import pandas as pd
 from numpy import where
-import logging
-
-#  ------------------------
-#  ----- logging part ---- TODO: LATER!
-#  ------------------------
-# a very practical way of setting it up is to write a logging statement that only takes a separate logger if file evaluated directly. Otherwise, you want to just take over the logging from the main file.
-# logger = logging.getLogger(__name__)
-
-# if __name__ == "__main__":
-#     logging.basicConfig(level=logging.DEBUG, filename='scrape-clean.log')
-
-# generally all of this should be kinda cleaned up for when we make it a ready script 
+# import logging
 
 #  ------------------------
 #  ----- scraping part ----
@@ -25,42 +14,17 @@ import logging
 url = "https://www.idealista.it/en/ajax/listing/georeach/milano-milano"
 
 # doesn't use the basic curl_cffi headers for impersonating because need a datadome cookie to scrape 
-headers = {
-    'authority': 'www.idealista.it',
-    'method': 'GET',
-    'path': '/it/ajax/listing/georeach/milano-milano',
-    'scheme': 'https',
-    'accept': '*/*',
-    'accept-encoding': 'gzip, deflate, br, zstd',
-    'accept-language': 'en-GB,en;q=0.9',
-    'cache-control': 'no-cache',
-    'cookie': 'lang=it; userUUID=538e6504-263f-4bc7-849d-53e11002ad76; contact25ff0fc7-e1bb-4bf2-84a4-627c9c2ea978="{\'maxNumberContactsAllow\':10}"; cookieSearch-1=%2Fvendita-case%2Fmilano-milano%2F%3A1771922349150; uppar=false; SESSION=7eb990ed5207cfc8~25ff0fc7-e1bb-4bf2-84a4-627c9c2ea978; PARAGLIDE_LOCALE=it; didomi_token=eyJ1c2VyX2lkIjoiMTljOGVjZDYtNGMyNS02NTQzLWJkMmMtZjcyNDdjY2FlODQ1IiwiY3JlYXRlZCI6IjIwMjYtMDItMjRUMDg6Mzk6MTEuMjk4WiIsInVwZGF0ZWQiOiIyMDI2LTAyLTI0VDA4OjM5OjExLjI5OFoiLCJ2ZXJzaW9uIjpudWxsfQ==; datadome=4E9xr85MlWe3MCFzSO2LmIIxu8gNp30F0~_AOhvKePjzvx~sFJLbeTsS~rEJGtljiq_7tuJ10G5FLsWYaC6SwORdGxZqQLSMJzowukO0ZjsUPeWuABQBmF6u4wGygsUU',
-    'pragma': 'no-cache',
-    'priority': 'u=1, i',
-    'referer': 'https://www.idealista.it/vendita-case/milano-milano/',
-    'sec-ch-device-memory': '8',
-    'sec-ch-ua': '"Not:A-Brand";v="99", "Microsoft Edge";v="145", "Chromium";v="145"',
-    'sec-ch-ua-arch': '"x86"',
-    'sec-ch-ua-full-version-list': '"Not:A-Brand";v="99.0.0.0", "Microsoft Edge";v="145.0.3800.70", "Chromium";v="145.0.7632.110"',
-    'sec-ch-ua-mobile': '?0',
-    'sec-ch-ua-model': '""',
-    'sec-ch-ua-platform': '"Windows"',
-    'sec-fetch-dest': 'empty',
-    'sec-fetch-mode': 'cors',
-    'sec-fetch-site': 'same-origin',
-    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0'
-}
+headers = {"some-header-key":"some-header-value"}
 
+# TODO: this is commented out because the website would block the scraping anyways
+# req = curl_cffi.get(url=url, headers=headers)
 
-req = curl_cffi.get(url=url, headers=headers)
+# with open('../data-raw/milan.json', 'w+') as f:
+#     json.dump(req.json(), f)
 
-with open('../data-raw/milan.json', 'w+') as f:
-    json.dump(req.json(), f)
-
-# important: when using the interactive session, use the '..' in front of folder, because the pwd is different (unless you change it) 
 
 # ----------------
-#  TODO LATER!
+#  TODO Explain writing adding abstraction (through functions) to make code more readable/easier to re-use
 # ----------------
 
 # alternative version where we use the function
@@ -107,6 +71,7 @@ with open('../data-raw/milan.json', 'r') as f:
     milan_json = json.load(f)
 
 # TODO Show the interactive mode!
+# important: when using the interactive session, pay attention to the current working directory (cwd), because it may be different  
 # what i tried at first and didn't work
 # df = pd.json_normalize(milan_json) 
 
@@ -123,8 +88,8 @@ df[['rooms', 'area','amenities']] = pd.DataFrame(df['features'].to_list())
 df[['floor', 'lift']] = df['amenities'].str.split(r'\s(?=[A-Z])', 
 regex=True, expand=True)
 
+# TODO: this snippet is not used but is still left here for exposition of how repeated code would look like
 # cleaning columns to adjust type for the regression later
-# these are not used but left here for exposition of how repeated code would look like
 # df['rooms'] = df['rooms'].str.replace(' rooms', '').astype(int)
 # df['area'] = df['area'].str.replace(' m²', '').astype(int)
 # df['floor'] = df['rooms'].str.replace(' floor', '')
@@ -229,4 +194,4 @@ df = df[['adId', 'price', 'distance', 'rooms', 'area', 'floor', 'lift_ind']]
 
 df.to_csv("../results/data_clean.csv")
 
-# TODO: git time
+# TODO: Git time!

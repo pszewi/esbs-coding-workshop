@@ -1,0 +1,297 @@
+{
+    "headers": {},
+    "body": {
+        "title": "New developments matching your filters near your search area",
+        "ads": [
+            {
+                "adId": 30490345,
+                "thumbnails": {
+                    "thumbnail": "https://img4.idealista.it/blur/591_420_mq/0/id.pro.it.image.master/8a/d4/63/624313904.jpg",
+                    "thumbnailWebp": "https://img4.idealista.it/blur/591_420_mq/0/id.pro.it.image.master/8a/d4/63/624313904.webp",
+                    "thumbnailMobile": "https://img4.idealista.it/blur/340_280_mq/0/id.pro.it.image.master/8a/d4/63/624313904.jpg",
+                    "thumbnailMobileWebp": "https://img4.idealista.it/blur/340_280_mq/0/id.pro.it.image.master/8a/d4/63/624313904.webp"
+                },
+                "ribbons": [
+                    "New homes"
+                ],
+                "distance": "229.26890481645663",
+                "address": "Flat / apartment in Via Valleambrosia, 21",
+                "detailUrl": "/immobile/30490345/",
+                "price": 230000.0,
+                "features": [
+                    "2 rooms",
+                    "67 m²",
+                    "6th floor With lift"
+                ],
+                "preferredContactMethod": "ALL",
+                "isFavorite": false
+            },
+            {
+                "adId": 34912977,
+                "thumbnails": {
+                    "thumbnail": "https://img4.idealista.it/blur/591_420_mq/0/id.pro.it.image.master/7a/66/67/773752809.jpg",
+                    "thumbnailWebp": "https://img4.idealista.it/blur/591_420_mq/0/id.pro.it.image.master/7a/66/67/773752809.webp",
+                    "thumbnailMobile": "https://img4.idealista.it/blur/340_280_mq/0/id.pro.it.image.master/7a/66/67/773752809.jpg",
+                    "thumbnailMobileWebp": "https://img4.idealista.it/blur/340_280_mq/0/id.pro.it.image.master/7a/66/67/773752809.webp"
+                },
+                "ribbons": [
+                    "New homes"
+                ],
+                "distance": "422.9025061740606",
+                "address": "Flat / apartment in Via Franchi Maggi",
+                "detailUrl": "/immobile/34912977/",
+                "price": 340000.0,
+                "features": [
+                    "2 rooms",
+                    "79 m²",
+                    "4th floor With lift"
+                ],
+                "preferredContactMethod": "ALL",
+                "isFavorite": false
+            },
+            {
+                "adId": 28952693,
+                "thumbnails": {
+                    "thumbnail": "https://img4.idealista.it/blur/591_420_mq/0/id.pro.it.image.master/7f/91/be/776951169.jpg",
+                    "thumbnailWebp": "https://img4.idealista.it/blur/591_420_mq/0/id.pro.it.image.master/7f/91/be/776951169.webp",
+                    "thumbnailMobile": "https://img4.idealista.it/blur/340_280_mq/0/id.pro.it.image.master/7f/91/be/776951169.jpg",
+                    "thumbnailMobileWebp": "https://img4.idealista.it/blur/340_280_mq/0/id.pro.it.image.master/7f/91/be/776951169.webp"
+                },
+                "ribbons": [
+                    "New homes"
+                ],
+                "distance": "520.2391081805079",
+                "address": "Flat / apartment in Piazza Santa Barbara, 7",
+                "detailUrl": "/immobile/28952693/",
+                "price": 344000.0,
+                "features": [
+                    "2 rooms",
+                    "65 m²",
+                    "5th floor With lift"
+                ],
+                "preferredContactMethod": "ALL",
+                "isFavorite": false
+            },
+            {
+                "adId": 31237874,
+                "thumbnails": {
+                    "thumbnail": "https://img4.idealista.it/blur/591_420_mq/0/id.pro.it.image.master/76/40/c9/744311682.jpg",
+                    "thumbnailWebp": "https://img4.idealista.it/blur/591_420_mq/0/id.pro.it.image.master/76/40/c9/744311682.webp",
+                    "thumbnailMobile": "https://img4.idealista.it/blur/340_280_mq/0/id.pro.it.image.master/76/40/c9/744311682.jpg",
+                    "thumbnailMobileWebp": "https://img4.idealista.it/blur/340_280_mq/0/id.pro.it.image.master/76/40/c9/744311682.webp"
+                },
+                "ribbons": [
+                    "New homes"
+                ],
+                "distance": "4126.9301689064605",
+                "address": "Flat / apartment in Via Marco Polo",
+                "detailUrl": "/immobile/31237874/",
+                "price": 449000.0,
+                "features": [
+                    "3 rooms",
+                    "119 m²",
+                    "1st floor With lift"
+                ],
+                "preferredContactMethod": "ALL",
+                "isFavorite": false
+            },
+            {
+                "adId": 31030898,
+                "thumbnails": {
+                    "thumbnail": "https://img4.idealista.it/blur/591_420_mq/0/id.pro.it.image.master/68/5d/c0/642347184.jpg",
+                    "thumbnailWebp": "https://img4.idealista.it/blur/591_420_mq/0/id.pro.it.image.master/68/5d/c0/642347184.webp",
+                    "thumbnailMobile": "https://img4.idealista.it/blur/340_280_mq/0/id.pro.it.image.master/68/5d/c0/642347184.jpg",
+                    "thumbnailMobileWebp": "https://img4.idealista.it/blur/340_280_mq/0/id.pro.it.image.master/68/5d/c0/642347184.webp"
+                },
+                "ribbons": [
+                    "New homes"
+                ],
+                "distance": "4481.7686957852775",
+                "address": "Flat / apartment in Increa",
+                "detailUrl": "/immobile/31030898/",
+                "price": 327800.0,
+                "features": [
+                    "3 rooms",
+                    "110 m²",
+                    "1st floor With lift"
+                ],
+                "preferredContactMethod": "ALL",
+                "isFavorite": false
+            },
+            {
+                "adId": 29304524,
+                "thumbnails": {
+                    "thumbnail": "https://img4.idealista.it/blur/591_420_mq/0/id.pro.it.image.master/ef/ba/46/585978400.jpg",
+                    "thumbnailWebp": "https://img4.idealista.it/blur/591_420_mq/0/id.pro.it.image.master/ef/ba/46/585978400.webp",
+                    "thumbnailMobile": "https://img4.idealista.it/blur/340_280_mq/0/id.pro.it.image.master/ef/ba/46/585978400.jpg",
+                    "thumbnailMobileWebp": "https://img4.idealista.it/blur/340_280_mq/0/id.pro.it.image.master/ef/ba/46/585978400.webp"
+                },
+                "ribbons": [
+                    "New homes"
+                ],
+                "distance": "5980.668059067633",
+                "address": "Flat / apartment in Via Rosmini",
+                "detailUrl": "/immobile/29304524/",
+                "price": 369000.0,
+                "features": [
+                    "3 rooms",
+                    "124 m²",
+                    "1st floor With lift"
+                ],
+                "preferredContactMethod": "ALL",
+                "isFavorite": false
+            },
+            {
+                "adId": 33613376,
+                "thumbnails": {
+                    "thumbnail": "https://img4.idealista.it/blur/591_420_mq/0/id.pro.it.image.master/eb/0c/17/724201745.jpg",
+                    "thumbnailWebp": "https://img4.idealista.it/blur/591_420_mq/0/id.pro.it.image.master/eb/0c/17/724201745.webp",
+                    "thumbnailMobile": "https://img4.idealista.it/blur/340_280_mq/0/id.pro.it.image.master/eb/0c/17/724201745.jpg",
+                    "thumbnailMobileWebp": "https://img4.idealista.it/blur/340_280_mq/0/id.pro.it.image.master/eb/0c/17/724201745.webp"
+                },
+                "ribbons": [
+                    "New homes"
+                ],
+                "distance": "6039.744336280405",
+                "address": "Flat / apartment in Via Friuli",
+                "detailUrl": "/immobile/33613376/",
+                "price": 200000.0,
+                "features": [
+                    "2 rooms",
+                    "65 m²",
+                    "Ground floor With lift"
+                ],
+                "preferredContactMethod": "ALL",
+                "isFavorite": false
+            },
+            {
+                "adId": 28470500,
+                "thumbnails": {
+                    "thumbnail": "https://img4.idealista.it/blur/591_420_mq/0/id.pro.it.image.master/ed/ea/d4/553065015.jpg",
+                    "thumbnailWebp": "https://img4.idealista.it/blur/591_420_mq/0/id.pro.it.image.master/ed/ea/d4/553065015.webp",
+                    "thumbnailMobile": "https://img4.idealista.it/blur/340_280_mq/0/id.pro.it.image.master/ed/ea/d4/553065015.jpg",
+                    "thumbnailMobileWebp": "https://img4.idealista.it/blur/340_280_mq/0/id.pro.it.image.master/ed/ea/d4/553065015.webp"
+                },
+                "ribbons": [
+                    "New homes"
+                ],
+                "distance": "7643.038586799076",
+                "address": "Flat / apartment in Via Stelvio",
+                "detailUrl": "/immobile/28470500/",
+                "price": 246000.0,
+                "features": [
+                    "2 rooms",
+                    "73 m²",
+                    "2nd floor With lift"
+                ],
+                "preferredContactMethod": "ALL",
+                "isFavorite": false
+            },
+            {
+                "adId": 34880194,
+                "thumbnails": {
+                    "thumbnail": "https://img4.idealista.it/blur/591_420_mq/0/id.pro.it.image.master/61/91/34/772587614.jpg",
+                    "thumbnailWebp": "https://img4.idealista.it/blur/591_420_mq/0/id.pro.it.image.master/61/91/34/772587614.webp",
+                    "thumbnailMobile": "https://img4.idealista.it/blur/340_280_mq/0/id.pro.it.image.master/61/91/34/772587614.jpg",
+                    "thumbnailMobileWebp": "https://img4.idealista.it/blur/340_280_mq/0/id.pro.it.image.master/61/91/34/772587614.webp"
+                },
+                "ribbons": [
+                    "New homes"
+                ],
+                "distance": "8017.0043782696575",
+                "address": "Flat / apartment in Via Lorenzo Perosi, 11",
+                "detailUrl": "/immobile/34880194/",
+                "price": 460000.0,
+                "features": [
+                    "3 rooms",
+                    "127 m²",
+                    "1st floor With lift"
+                ],
+                "preferredContactMethod": "ALL",
+                "isFavorite": false
+            },
+            {
+                "adId": 34159534,
+                "thumbnails": {
+                    "thumbnail": "https://img4.idealista.it/blur/591_420_mq/0/id.pro.it.image.master/bd/a5/6d/775240260.jpg",
+                    "thumbnailWebp": "https://img4.idealista.it/blur/591_420_mq/0/id.pro.it.image.master/bd/a5/6d/775240260.webp",
+                    "thumbnailMobile": "https://img4.idealista.it/blur/340_280_mq/0/id.pro.it.image.master/bd/a5/6d/775240260.jpg",
+                    "thumbnailMobileWebp": "https://img4.idealista.it/blur/340_280_mq/0/id.pro.it.image.master/bd/a5/6d/775240260.webp"
+                },
+                "ribbons": [
+                    "New homes"
+                ],
+                "distance": "8966.494851417818",
+                "address": "Flat / apartment in Via San Michele Del Carso, 16",
+                "detailUrl": "/immobile/34159534/",
+                "price": 200000.0,
+                "features": [
+                    "2 rooms",
+                    "66 m²",
+                    "1st floor With lift"
+                ],
+                "preferredContactMethod": "ALL",
+                "isFavorite": false
+            },
+            {
+                "adId": 34893831,
+                "thumbnails": {
+                    "thumbnail": "https://img4.idealista.it/blur/591_420_mq/0/id.pro.it.image.master/2b/f5/78/773041681.jpg",
+                    "thumbnailWebp": "https://img4.idealista.it/blur/591_420_mq/0/id.pro.it.image.master/2b/f5/78/773041681.webp",
+                    "thumbnailMobile": "https://img4.idealista.it/blur/340_280_mq/0/id.pro.it.image.master/2b/f5/78/773041681.jpg",
+                    "thumbnailMobileWebp": "https://img4.idealista.it/blur/340_280_mq/0/id.pro.it.image.master/2b/f5/78/773041681.webp"
+                },
+                "ribbons": [
+                    "New homes"
+                ],
+                "distance": "9153.203031539935",
+                "address": "Flat / apartment in Via Borgomaneri",
+                "detailUrl": "/immobile/34893831/",
+                "price": 255000.0,
+                "features": [
+                    "3 rooms",
+                    "100 m²",
+                    "1st floor With lift"
+                ],
+                "preferredContactMethod": "ALL",
+                "isFavorite": false
+            },
+            {
+                "adId": 34899460,
+                "thumbnails": {
+                    "thumbnail": "https://img4.idealista.it/blur/591_420_mq/0/id.pro.it.image.master/c9/e5/77/773300590.jpg",
+                    "thumbnailWebp": "https://img4.idealista.it/blur/591_420_mq/0/id.pro.it.image.master/c9/e5/77/773300590.webp",
+                    "thumbnailMobile": "https://img4.idealista.it/blur/340_280_mq/0/id.pro.it.image.master/c9/e5/77/773300590.jpg",
+                    "thumbnailMobileWebp": "https://img4.idealista.it/blur/340_280_mq/0/id.pro.it.image.master/c9/e5/77/773300590.webp"
+                },
+                "ribbons": [
+                    "New homes"
+                ],
+                "distance": "9208.355549751399",
+                "address": "Flat / apartment in Cascina Bianca Carones",
+                "detailUrl": "/immobile/34899460/",
+                "price": 335000.0,
+                "features": [
+                    "3 rooms",
+                    "103 m²",
+                    "1st floor With lift"
+                ],
+                "preferredContactMethod": "ALL",
+                "isFavorite": false
+            }
+        ],
+        "saveSearchCardInfo": {
+            "staticMapUrl": "https://maps3.idealista.it/maps/api/staticmap?path=weight%3A2%7Ccolor%3A0xb62682ff%7Cfillcolor%3A0xb6268240%7Cenc%3AonotG%7Bdlu%40sDNisB%7BVoyAkn%40woAeBcD%5DkfBo_%40g%60Boz%40wvAksA_jAkiBuz%40q%7BBWmA_%7C%40ggA%7BdAkzBkr%40qkC_%5EiwCKcBkH%7BiC%3FmDtFcbCCOyUg%7CAoDgp%40eMc%7BAs%40aeAsC%7BhA%40aG%7CJmuBsBWp%40iNpG%7Bn%40pA%7BXnAoKr%40TfKycAAqBdRuxCnRgfArGuf%40%60GgTrBeLvFkPVeO%7ECiXhDgx%40h%40mF%7Cc%40%7DtC%7Ew%40qgCjOyXbDoKdhAmtBxvAy%7DAjM%7DHvyA%7DpAtdBew%40jjBeZ%7EkBvAbK%7E%40bmBza%40tCMlMg%40vHWdQc%40%40%7E%40xIU%7C%40CL%3Fry%40qBfa%40xFpKPbX%7EF%60g%40bHpLfF%60CBAz%40zA%5Cp%5CjAjEK%7EDj%40rYbAvARbc%40hK%60h%40nHriBpx%40btA%7CkAxp%40%60%5Bf%7DAfvAjm%40v_ADFZ%60%40z%40hA%5Eh%40rBpCfEzHnQzXX%5EBHPVnDjHrF%7EKSVz%5Bll%40z%40vAL%5ExKbSjYfaAhIvUzZfi%40vz%40tiCDXtVrs%40Pn%40r%40%7CDlKzY%7EB%7EHnUt%7D%40jAnF%60%60%40xdC%5C%7ECPfBdPfwCwBdyCsWfuCsk%40vkCoG%7EOyTt%7E%40uVhl%40oa%40lmA%7BVvc%40_%5CjbAqN%60Vgy%40naCeAfB%7D%40tr%40%7BW%7EnCgGxXAP%7DA%7CG%7B%5EtbB%7DA%7CDyIv_%40qcAjaCab%40bk%40_V%7Cm%40Ud%40azA%7EzBekBb%7BAsC%7EAumAfh%40cqAdWi%40FmpBrCsm%40sJo_%40rB%7DFs%40&size=520x390&map_id=277766be19b709cf&format=png&maptype=roadmap&language=it&key=AIzaSyDZzRTUHkF8LNno0PsEkZLXYBJJDUqxHDE&signature=Bxdt9M5iZkibsTjx81GODyGzomQ=",
+            "filterSummary": [
+                "All prices",
+                "All sizes",
+                "Include auctions",
+                "Condition: New homes"
+            ],
+            "searchTitle": "New developments in Milan and the surrounding area",
+            "searchUrl": "/en/aree/vendita-case/con-nuova-costruzione/?shape=%2528%2528onotG%257Bdlu%2540sDNisB%257BVoyAkn%2540woAeBcD%255DkfBo_%2540g%2560Boz%2540wvAksA_jAkiBuz%2540q%257BBWmA_%257C%2540ggA%257BdAkzBkr%2540qkC_%255EiwCKcBkH%257BiC%253FmDtFcbCCOyUg%257CAoDgp%2540eMc%257BAs%2540aeAsC%257BhA%2540aG%257CJmuBsBWp%2540iNpG%257Bn%2540pA%257BXnAoKr%2540TfKycAAqBdRuxCnRgfArGuf%2540%2560GgTrBeLvFkPVeO%257ECiXhDgx%2540h%2540mF%257Cc%2540%257DtC%257Ew%2540qgCjOyXbDoKdhAmtBxvAy%257DAjM%257DHvyA%257DpAtdBew%2540jjBeZ%257EkBvAbK%257E%2540bmBza%2540tCMlMg%2540vHWdQc%2540%2540%257E%2540xIU%257C%2540CL%253Fry%2540qBfa%2540xFpKPbX%257EF%2560g%2540bHpLfF%2560CBAz%2540zA%255Cp%255CjAjEK%257EDj%2540rYbAvARbc%2540hK%2560h%2540nHriBpx%2540btA%257CkAxp%2540%2560%255Bf%257DAfvAjm%2540v_ADFZ%2560%2540z%2540hA%255Eh%2540rBpCfEzHnQzXX%255EBHPVnDjHrF%257EKSVz%255Bll%2540z%2540vAL%255ExKbSjYfaAhIvUzZfi%2540vz%2540tiCDXtVrs%2540Pn%2540r%2540%257CDlKzY%257EB%257EHnUt%257D%2540jAnF%2560%2560%2540xdC%255C%257ECPfBdPfwCwBdyCsWfuCsk%2540vkCoG%257EOyTt%257E%2540uVhl%2540oa%2540lmA%257BVvc%2540_%255CjbAqN%2560Vgy%2540naCeAfB%257D%2540tr%2540%257BW%257EnCgGxXAP%257DA%257CG%257B%255EtbB%257DA%257CDyIv_%2540qcAjaCab%2540bk%2540_V%257Cm%2540Ud%2540azA%257EzBekBb%257BAsC%257EAumAfh%2540cqAdWi%2540FmpBrCsm%2540sJo_%2540rB%257DFs%2540%2529%2529",
+            "isSearchAlreadySaved": false
+        }
+    },
+    "statusCode": "OK"
+}

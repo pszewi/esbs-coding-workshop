@@ -1,14 +1,9 @@
 import statsmodels.api as sm
 import seaborn as sns
 import pandas as pd
-import logging
-
-# again, dev mode logging (if even needed, only if you want to actually log problems)
-# logger = logging.getLogger(__name__)
-# logging.basicConfig(...)
 
 # change the relative path when running with python
-df = pd.read_csv("../../demo-project/results/data_clean.csv")
+df = pd.read_csv("../results/data_clean.csv")
 y = df['price']
 x = df[['rooms', 'area', 'floor']]
 
@@ -23,7 +18,7 @@ scatter = sns.scatterplot(
     palette="muted"
 )
 fig = scatter.get_figure()
-fig.savefig("demo-project/output/out.png") 
+fig.savefig("../output/out.png") 
 
 
 # TODO: move on to new features/re-running on different data/packaging

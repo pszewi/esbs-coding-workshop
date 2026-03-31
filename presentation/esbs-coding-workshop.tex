@@ -1,0 +1,503 @@
+\documentclass[13pt, aspectratio=169]{beamer}
+
+\usepackage{bookmark}
+% \usepackage[T1]{fontenc}
+
+% code listings
+\usepackage{listings}
+\usepackage{xcolor}
+
+
+% defining colors
+\definecolor{uchic_lightgray}{RGB}{214, 214, 206}
+\definecolor{uchic_orange}{RGB}{193, 102, 34}
+\definecolor{uchic_darkblue}{RGB}{21, 67, 95}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    backgroundcolor=\color{gray!10},
+    frame=single,
+    rulecolor=\color{gray!40},
+    breaklines=true,
+    showstringspaces=false,
+    keywordstyle=\color{uchic_darkblue}\bfseries,
+    commentstyle=\color{gray},
+    stringstyle=\color{uchic_orange},
+}
+
+% beamer theme
+\usetheme{Madrid}
+\useoutertheme[subsection=false]{miniframes}
+\useinnertheme{circles}
+
+% colors
+\setbeamercolor{background canvas}{bg=white, fg=lightgray!30}
+\setbeamercolor{palette primary}{bg=uchic_darkblue, fg=lightgray!30}
+\setbeamercolor{palette secondary}{bg=uchic_lightgray, fg=lightgray!30}
+\setbeamercolor{palette tertiary}{bg=uchic_darkblue, fg=lightgray!30}
+\setbeamercolor{palette quaternary}{bg=uchic_darkblue, fg=lightgray!30}
+\setbeamercolor{structure}{fg=uchic_darkblue}
+\setbeamercolor{section in toc}{fg=uchic_darkblue}
+\setbeamercolor{title}{bg=uchic_darkblue, fg=lightgray!30}
+\setbeamercolor{block title}{bg=uchic_darkblue, fg=white}
+\setbeamercolor{block body}{bg=gray!10}
+\setbeamercolor{alerted text}{fg=uchic_orange}
+\setbeamercolor{section in head/foot}{bg=uchic_darkblue, fg=white}
+\setbeamercolor{mini frame}{bg=uchic_darkblue, fg=white}
+
+\usepackage{etoolbox}
+\patchcmd{\sectionentry}{\usebeamercolor[fg]{section in head/foot}}{\usebeamercolor[fg]{mini frame}}{}{}
+
+\setbeamercovered{transparent}
+\setbeamertemplate{footline}[frame number]
+\setcounter{subsection}{1}
+\setbeamertemplate{navigation symbols}{}
+
+% title page
+\setbeamertemplate{title page}{
+  \vbox{}
+  \vfill
+  \begingroup
+    \centering
+    \usebeamertemplate{title}
+    \vskip0.5em
+    \usebeamertemplate{titlegraphic}
+    \vskip1em
+    \usebeamertemplate{author}
+    \begin{center}
+        \vfill
+        \footnotesize{Economic Society for Bocconi Students}
+    \end{center}
+    \footnotesize{\usebeamertemplate{date}}
+  \endgroup
+}
+
+\title{Good Coding Practices in Economics}
+\author{Jakub Przewoski}
+\date{March 2026}
+
+% ============================================================
+\begin{document}
+
+\maketitle
+
+% ---- TABLE OF CONTENTS ----
+\begin{frame}{Today's Agenda}
+    \tableofcontents
+\end{frame}
+
+% ============================================================
+\section{Introduction}
+
+\begin{frame}{Why Does This Matter?}
+    \begin{columns}
+        \begin{column}{0.55\textwidth}
+            \begin{itemize}
+                \item Code is \textbf{mostly read, not written} — by colleagues, supervisors, and your future self
+                \item Open-source languages and conventions are a long-term investment in efficiency
+                \item Today: a quick overview of core concepts + a \alert{live demo}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.45\textwidth}
+            \begin{block}{The Golden Rule}
+                Always code as if the person who will maintain your code is a violent psychopath who knows where you live.
+            \end{block}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% ============================================================
+\begin{frame}{What Is Reproducibility?}
+    \textbf{Scenario:} A professor asks you to write code he can run on his machine in one click. Later, he'll adjust it and eventually take over the project entirely.
+
+    \vspace{0.5em}
+    What should your code guarantee?
+
+    \begin{itemize}
+        \item \textbf{Dependency transparency} — what libraries does it need, and which versions?
+        \item \textbf{Documentation} — can someone understand it quickly without asking you?
+        \item \textbf{Modularity} — can individual parts be changed without breaking everything else?
+    \end{itemize}
+
+    \vspace{0.4em}
+    \begin{alertblock}{The core goal}
+        Anyone with your code and your instructions should get \textit{exactly} the same results.
+    \end{alertblock}
+\end{frame}
+
+% ============================================================
+\section{Setup}
+
+\begin{frame}{R, Python, or Stata?}
+    \begin{columns}
+        \begin{column}{0.3\textwidth}
+            \textbf{Stata}
+            \begin{itemize}
+                \item Easy to learn
+                \item Limited scope
+                \item Requires a license
+                \item Rare outside academia
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.3\textwidth}
+            \textbf{R}
+            \begin{itemize}
+                \item Excellent for statistics
+                \item Rich econometrics ecosystem
+                \item Less general-purpose
+                \item Free \& open source
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.3\textwidth}
+            \textbf{Python}
+            \begin{itemize}
+                \item General purpose
+                \item ML, simulation, data
+                \item Stat inference improving
+                \item Free \& widely used
+            \end{itemize}
+        \end{column}
+    \end{columns}
+
+    \vspace{0.8em}
+    \begin{block}{Disclosure}
+        Today we will be working with Python, but the lessons here are language-agnostic. IRL, it's probably best if you learn a bit of all three.
+    \end{block}
+\end{frame}
+
+% ============================================================
+\begin{frame}{The Tools You Need}
+    \begin{columns}
+        \begin{column}{0.48\textwidth}
+            \textbf{Language \& Package Manager}
+            \begin{itemize}
+                \item \textbf{Miniconda} — lightweight, terminal-based (recommended)
+                \item \textbf{Anaconda} — includes a GUI, easier to start with
+                \item \textbf{R} from CRAN:\@ \texttt{cran.r-project.org}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\textwidth}
+            \textbf{Code Editor}
+            \begin{itemize}
+                \item \textbf{VS Code} — lightweight, highly customizable, free
+                \item Open it through the terminal or project folder to set up a workspace
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Conda Environments}
+    \textbf{The problem:} Different projects may need different (sometimes conflicting) package versions.
+
+    \vspace{0.3em}
+    \textbf{The solution:} A \alert{conda environment} is an isolated, self-contained Python installation per project.
+
+    \begin{columns}
+        \begin{column}{0.48\textwidth}
+            \begin{itemize}
+                \item Each project gets its own packages and versions
+                \item Environments don't interfere with each other
+                \item Easy to share: export to \texttt{environment.yml}
+                \item \textbf{R alternative}: The \texttt{renv} package
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\textwidth}
+\begin{lstlisting}[language=bash]
+# create
+conda create -n myproject python=3.11
+# activate
+conda activate myproject
+# export
+conda env export > environment.yml
+\end{lstlisting}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{VS Code Extensions}
+    % using VS Code is nicer because more versatile than IDEs and more lightweight but use whatever you prefer!
+    Activate extensions \textit{per workspace} to keep startup time fast and battery usage low.
+
+    \vspace{0.5em}
+    \begin{columns}
+        \begin{column}{0.48\textwidth}
+            \textbf{Must-haves}
+            \begin{itemize}
+                \item \textbf{Python} — linting, autocomplete, IntelliSense
+                \item \textbf{Jupyter} — run notebooks and interactive \texttt{.py} mode inside VS Code
+                \item \textbf{Data Wrangler} — visual data viewer
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\textwidth}
+            \textbf{Nice to have}
+            \begin{itemize}
+                \item \textbf{GitHub Copilot} — free with \href{https://github.com/education}{GitHub Education}
+                \item \textbf{LaTeX Workshop} — write papers locally inside VS Code
+                \item \textbf{R extension} — if you use R
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% ============================================================
+\section{Writing Good Code}
+
+\begin{frame}[fragile]{A Clean Project Folder}
+    Good structure means anyone (including future-you) can navigate the project in seconds.
+
+    \vspace{0.5em}
+    \begin{columns}
+        \begin{column}{0.45\textwidth}
+\begin{lstlisting}
+my_project/
+|-- data/
+|   |-- raw/
+|   |-- clean/
+|-- src/
+|   |-- 01_clean.py
+|   |-- 02_analysis.py
+|   |-- __main__.py
+|-- output/
+|   |-- figures/
+|   |-- tables/
+|-- writing/
+|-- README.md
+|-- environment.yml
+\end{lstlisting}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{itemize}
+                \item \textbf{Raw data is never modified} — always save a clean copy separately
+                \item \textbf{README.md} is not optional — it's the front door to your project
+                \item Keep one \textbf{sample project folder} and copy it every time you start something new
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% ============================================================
+\begin{frame}{The Essentials}
+    \begin{itemize}
+        \item \textbf{Separate files for separate tasks} — cleaning, analysis, and a \texttt{\_\_main\_\_.py} that ties it together
+        \item \textbf{DRY — Don't Repeat Yourself} — if you copy-paste code more than twice, write a function
+        \item \textbf{Comment the \textit{why}, not the \textit{what}} — the code already says what it does; explain your reasoning
+        \item \textbf{Write docstrings} — a few lines above each function describing inputs, outputs, and purpose
+        \item \textbf{Name variables consistently} — \texttt{gdp\_growth\_2023}, not \texttt{x2} or \texttt{temp\_var\_final\_v3}
+        \item \textbf{Save intermediate clean data} — avoid re-running expensive cleaning steps on every run
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Comments \& Docstrings}
+    \begin{columns}
+        \begin{column}{0.48\textwidth}
+            \textbf{Bad comment — states the obvious:}
+\begin{lstlisting}[language=python]
+# multiply x by 2
+result = x * 2
+\end{lstlisting}
+            \vspace{0.5em}
+            \textbf{Good comment — explains the why:}
+\begin{lstlisting}[language=python]
+# Annualize monthly growth rate
+# using compound formula
+result = (1 + x)**12 - 1
+\end{lstlisting}
+        \end{column}
+        \begin{column}{0.48\textwidth}
+            \textbf{A docstring:}
+\begin{lstlisting}[language=python]
+def clean_cpi(df, base_year):
+    """
+    Rebase CPI series to a given
+    base year.
+
+    Parameters:
+        df: pd.DataFrame with 'date'
+            and 'cpi' columns
+        base_year: int
+
+    Returns:
+        pd.DataFrame with rebased CPI
+    """
+\end{lstlisting}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Useful Tricks}
+    \begin{columns}
+        \begin{column}{0.48\textwidth}
+            \textbf{Interactive mode in VS Code}
+            \begin{itemize}
+                \item Use \texttt{Shift + Enter} to run your \texttt{.py} file like a notebook (run code block-by-block) 
+                \item Great for exploratory analysis while keeping your code in proper scripts
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\textwidth}
+            \textbf{Logging \& resumable pipelines}
+            \begin{itemize}
+                % chktex-file 36 
+                \item When developing the code, use the \texttt{print()} statements to test it, 
+                \item Before running the code, switch to Python's \texttt{logging} module writes different statements (e.g.\ errors) to a file
+                % \item For long-running scripts (e.g.\ web scraping, simulations), design them so they can be stopped and restarted without re-doing completed work
+            \end{itemize}
+        \end{column}
+    \end{columns}
+
+    \vspace{0.5em}
+    \begin{block}{AI tools}
+        GitHub Copilot is excellent for boilerplate and docstrings. Use it as a \textit{first draft} — always read and understand what it writes (or use Claude Code instead).
+    \end{block}
+\end{frame}
+
+% ============================================================
+\section{Git}
+
+\begin{frame}{What Is Git?}
+    \textbf{Git} is a version control system — it tracks every change you make to your code over time.
+
+    \vspace{0.5em}
+    \begin{columns}
+        \begin{column}{0.55\textwidth}
+            \textbf{What it lets you do:}
+            \begin{itemize}
+                \item See exactly what changed between versions and when
+                \item Revert to any previous state if something breaks
+                \item Experiment safely using \textbf{branches} — a separate line of development that won't touch your working code
+                \item Collaborate with others and \textbf{merge} changes together
+                \item See who wrote which line and why (commit messages)
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \begin{alertblock}{Think of it as \dots}
+                Track Changes in Word, but for your entire project — and you control exactly when a snapshot is taken.
+            \end{alertblock}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Git: The Basic Workflow}
+    \begin{columns}
+        \begin{column}{0.48\textwidth}
+\begin{lstlisting}[language=bash]
+# Start tracking a project
+git init
+
+# Stage your changes
+git add .
+
+# Save a snapshot
+git commit -m "Add CPI cleaning script"
+
+# See what changed
+git diff
+
+# See your history
+git log --oneline
+\end{lstlisting}
+        \end{column}
+        \begin{column}{0.48\textwidth}
+            \begin{itemize}
+                \item \textbf{GitHub} hosts your repository online — backup + collaboration
+                \item \textbf{GitHub Education} gives you free Pro access (private repos, Copilot, and more) with your university email
+                \item Always include a \texttt{.gitignore} to avoid committing data files, credentials, or large outputs
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Branches: Experiment Safely}
+    \begin{block}{The idea}
+        A branch is a parallel version of your project. Make changes there freely — your main code stays untouched until you decide to merge.
+    \end{block}
+
+    \vspace{0.5em}
+    \begin{columns}
+        \begin{column}{0.48\textwidth}
+\begin{lstlisting}[language=bash]
+# Create and switch to a new branch
+git checkout -b new-specification
+
+# ... make changes, commit ...
+
+# Merge back when ready
+git checkout main
+git merge new-specification
+\end{lstlisting}
+        \end{column}
+        \begin{column}{0.48\textwidth}
+            \textbf{Useful for:}
+            \begin{itemize}
+                \item Testing a different model specification
+                \item Trying a different data cleaning approach
+                \item Responding to reviewer comments without touching working code
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\section*{Takeaways}
+
+\begin{frame}{Takeaways}
+    \begin{enumerate}
+        \item \textbf{Reproducibility} is not optional in research — document dependencies, structure, and reasoning
+        \item \textbf{Python and R} are worth learning; they'll serve you in academia and industry
+        \item \textbf{Environments} keep projects isolated and shareable
+        \item \textbf{Structure} your project before writing a single line of code
+        \item \textbf{Write for readers} — comment the why, use functions, keep it DRY
+        \item \textbf{Use Git} — you will eventually break something, and you'll be glad you did
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Further Reading}
+    \begin{itemize}
+        \item \textbf{Missing Semester} (MIT) — \texttt{missing.csail.mit.edu} \\
+        Practical tools every developer should know: shell, git, editors, and more
+        \vspace{0.3em}
+        \item \textbf{Coding for Economists} — \texttt{aeturrell.github.io/coding-for-economists} \\
+        Reproducible analysis and best practices tailored for economics research
+        \vspace{0.3em}
+        \item \textbf{Why Every Economics Student Should Use GitHub} \\
+        \texttt{econ-jobs.com} — motivation and practical starting points
+    \end{itemize}
+    
+\end{frame}
+
+% ---
+
+\appendix
+
+\section{Appendix: Local \LaTeX}
+
+\begin{frame}{Writing Papers Locally with \LaTeX}
+    \textbf{Why bother with local \LaTeX\ instead of Overleaf?}
+
+    \begin{columns}
+        \begin{column}{0.48\textwidth}
+            \textbf{Advantages}
+            \begin{itemize}
+                \item Figures and output live in the same project --- no manual transfers
+                \item No compile limits, full privacy, works offline
+                \item Integrates with GitHub for version control of your writing
+                \item Zotero integration auto-updates your bibliography
+                \item AI completions via Copilot
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\textwidth}
+            \textbf{Disadvantages}
+            \begin{itemize}
+                \item Initial setup takes some effort
+                \item Debugging (e.g.\ bibliography issues) requires more patience
+                \item Real-time collaboration is less smooth than Overleaf
+            \end{itemize}
+            \vspace{0.5em}
+            \textbf{VS Code extensions:}
+            \begin{itemize}
+                \item \textbf{LaTeX} + \textbf{LaTeX Workshop}
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% ============================================================
+\end{document}
